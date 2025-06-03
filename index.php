@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmes</title>
-</head>
-<body>
+<?php
+    // Importa o header
+    require_once("templates/header.php");
     
-</body>
-</html>
+    // Importa o footer
+    require_once("templates/footer.php");
+?>
