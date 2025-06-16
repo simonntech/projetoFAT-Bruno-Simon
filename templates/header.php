@@ -4,6 +4,18 @@
     
     // Declaração das variáveis Globais
     require_once "globals.php";
+
+    //Importando models
+    require_once "models/Message.php";
+
+    $message = new Message($BASE_URL);
+
+    $flassMessage = $message -> getMessage();
+
+    if(!empty($flassMessage["msg"])) {
+        //Limpar a mensagem
+        $message->clearMessage();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,5 +54,10 @@
             </div>
         </nav>
     </header>
+    <?php if(!empty($flassMessage["msg"])): ?>
+        <div class="msg-container">
+            <p class="msg<?=$flassMessage["type"] ?>"><?= $flassMessage["msg"]?></p>
+        </div>
+    <?php endif; ?>
 </body>
 </html>
